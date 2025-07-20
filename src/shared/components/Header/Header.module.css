@@ -1,0 +1,125 @@
+.containerHeader {
+    margin-top: 20px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerImg {
+    margin: auto 0;
+    padding-left: 10px;
+}
+
+.headerButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerBar {
+    position: relative;
+}
+
+.headerBar a {
+    color: #000;
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.headerBar > a:hover {
+    color: #9C69E2;
+}
+
+.headerBar::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    border: 10px solid transparent;
+    border-bottom-color: #9C69E2;
+    z-index: 10001;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform .3s ease;
+}
+
+.headerMenu {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    background-color: #9C69E2;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+}
+
+.headerMenu li {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    padding: 5px 10px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.headerMenu li a {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 18px;
+}
+
+.headerMenu li a span {
+    display: inline-block;
+    transition: transform .3s ease;
+    color: #fff;
+}
+
+.headerMenu li:hover {
+    background-color: #b18ae8;
+    cursor: pointer;
+}
+
+.headerMenu li:hover a span {
+    transform: scale(1.05) translateX(5px);
+}
+
+.headerBar:hover .headerMenu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.headerBar:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .headerLogged {
+        display: none;
+    }
+
+    .headerBar {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .headerBar {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .headerBar {
+        display: none;
+    }
+}

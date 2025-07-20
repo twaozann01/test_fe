@@ -1,0 +1,114 @@
+/* Add New */
+
+.addNewContainer h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #212353;
+}
+
+.addForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.addForm .titleNew {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #4b5d68;
+}
+
+.addForm input,
+.addForm textarea {
+  background-color: #fff;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.addForm input:focus,
+.addForm textarea:focus {
+  border-color: #9C69E2;
+}
+
+.formActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.submitBtn {
+  margin-top: 30px;
+  background-color: #9C69E2;
+  color: #fff;
+  width: 45%;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  margin-top: 30px;
+  background-color: #e0e0e0;
+  color: #333;
+  width: 45%;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tagContainer {
+  margin-top: 20px;
+}
+
+.tagLabel {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #9c69e2;
+  color: #212353;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+  font-size: 14px;
+  user-select: none;
+}
+
+.tag input[type='checkbox'] {
+  display: none;
+}
+
+.tag input[type='checkbox']:checked + * {
+  font-weight: bold;
+}
+
+/* Hiệu ứng khi checkbox được chọn */
+.tag input[type='checkbox']:checked ~ span,
+.tag input[type='checkbox']:checked ~ label,
+.tag:has(input:checked) {
+  background-color: #9c69e2;
+  color: white;
+  font-weight: 600;
+}
+
+.tag:hover {
+  background-color: #9C69E2;
+  color: #fff;
+  font-weight: 600;
+}

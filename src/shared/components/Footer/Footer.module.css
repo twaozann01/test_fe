@@ -1,0 +1,203 @@
+/* Footer */
+
+/* Footer Top */
+.footerTop {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.ftTopLeft {
+    width: 45%;
+    font-size: 16px;
+    color: #4b5d68;
+    font-style: italic;
+}
+
+.ftTopLeft a {
+    display: flex;
+    margin-bottom: 65px;
+}
+
+.topLeftAddress {
+    width: 260px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #212353;
+    font-style: normal;
+}
+
+.ftTopRight {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #212353;
+}
+
+.ftGroupTitle {
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.ftListItems .ftItem {
+    height: 24px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    transition: color .3s ease;
+}
+
+.ftListItems .ftItem:hover {
+    color: #9C69E2;
+}
+
+.topRightGroupIcon {
+    width: 176px;
+}
+
+.ftListItemsIcon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ftListItemsIcon li {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #e2e3f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+
+.ftListItemsIcon li:hover {
+    background-color: #9C69E2;
+}
+
+.ftListItemsIcon li i {
+    margin-top: 2px;
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Footer Bottom */
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    margin-top: 60px;
+}
+
+.ftBottomText {
+    width: 360px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #4b5d68;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+}
+
+.ftBottomIcon {
+    width: 60px;
+    height: 60px;
+    background-color: #ebe1f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.ftBottomIcon i {
+    font-size: 30px;
+    color: #9C69E2;
+    margin-right: 0;
+    transition: transform 0.3s ease;
+}
+
+.ftBottomIcon i:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+} 
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .footerTop {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .ftTopLeft,
+  .ftTopRight {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ftTopLeft a {
+    justify-content: center;
+  }
+
+  .topLeftAddress {
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+
+  .ftTopRight {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .topRightGroupIcon {
+    width: auto;
+  }
+
+  .ftListItemsIcon {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .ftBottomText {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .ftBottomIcon {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .footerTop {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .ftTopLeft {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .ftTopLeft,
+  .ftTopRight {
+    width: 100%;
+  }
+
+  .ftTopRight {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}

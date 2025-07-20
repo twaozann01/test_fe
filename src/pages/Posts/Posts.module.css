@@ -1,0 +1,99 @@
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.addButton {
+  background: #9C69E2;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-weight: bold;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.searchGroup input {
+  padding: 10px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.searchGroup input:focus {
+  border-color: #9C69E2;
+}
+
+/* Table */
+.postTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.postTable th,
+.postTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.postTable th {
+  background: #ddd;
+}
+
+.editIcon,
+.deleteIcon {
+  margin: 0 6px;
+  cursor: pointer;
+  color: #333;
+}
+
+.editIcon:hover {
+  color: #9C69E2;
+}
+
+.deleteIcon:hover {
+  color: red;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.pageBtn {
+  padding: 8px 14px;
+  border: none;
+  background-color: #e0e0e0;
+  color: #333;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pageBtn:hover:not(.active):not(.disabled) {
+  background-color: #9C69E2;
+  color: white;
+}
+
+.pageBtn.active {
+  background-color: #9C69E2;
+  color: white;
+  font-weight: bold;
+}
+
+.pageBtn.disabled {
+  background-color: #ddd;
+  color: #999;
+  cursor: not-allowed;
+}

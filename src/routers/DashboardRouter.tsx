@@ -1,0 +1,15 @@
+import DashboardLayout from "../layouts/DashboardLayout"
+import CreatePost from "../pages/CreatePost"
+import EditPost from "../pages/EditPost"
+import Posts from "../pages/Posts"
+
+const DashboardRouter = {
+    path: "/posts",
+    element: <DashboardLayout/>,
+    children : [
+        {index: true, element: <Posts/>},
+        {path: "create", element: <CreatePost/>},
+        {path: "edit/:id", element: <EditPost/>},
+    ]
+}
+export default DashboardRouter
