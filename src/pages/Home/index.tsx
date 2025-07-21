@@ -8,8 +8,76 @@ import f_2 from "../../assets/images/feature2.aa8cfbcff7c4975f6f37.png";
 import f_3 from "../../assets/images/feature3.d41c5afe07c670d96f41.png";
 import f_4 from "../../assets/images/feature4.821e83ecc96bd79a8e9a.png";
 import styles from "./Home.module.css";
-
+import { useState } from "react";
+// import { useEffect, useState } from "react";
+// import Api from "../../services/Api";
+ const testimonials = [
+  {
+    id: 1,
+    name: "John Fang",
+    site: "wordfaang.com",
+    avatar: "https://i.pravatar.cc/100?img=1",
+    text: "Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla."
+  },
+  {
+    id: 2,
+    name: "Sarah Lee",
+    site: "sarahlee.dev",
+    avatar: "https://i.pravatar.cc/100?img=2",
+    text: "Vivamus commodo velit ac urna fermentum, in tincidunt turpis pulvinar. Quisque eget lectus sit amet lacus egestas faucibus."
+  },
+  {
+    id: 3,
+    name: "Michael Chen",
+    site: "mikechen.io",
+    avatar: "https://i.pravatar.cc/100?img=3",
+    text: "Curabitur euismod neque nec erat tincidunt, vitae consequat nulla volutpat. Aliquam erat volutpat."
+  },
+  {
+    id: 4,
+    name: "Anna Smith",
+    site: "annasmith.com",
+    avatar: "https://i.pravatar.cc/100?img=4",
+    text: "Maecenas pharetra nulla in justo commodo, vitae porttitor metus volutpat. Aenean a mauris ac ante feugiat mattis."
+  },
+  {
+    id: 5,
+    name: "David Kim",
+    site: "davidkim.design",
+    avatar: "https://i.pravatar.cc/100?img=5",
+    text: "Integer non elit eget urna malesuada faucibus sit amet ac sem. Duis feugiat, mauris a tincidunt dictum."
+  }
+];
 const Home = () => {
+  // const [gallery, setGallery] = useState<any[]>([])
+
+  // useEffect(()=> {
+  //   const fetchGallery = async () => {
+  //     try {
+  //       const res = await Api.getGalleries()
+  //       setGallery(res.data)
+  //     } catch (error) {
+  //       console.log("Lỗi khi lấy Gallery: ", error)
+  //     }
+  //   }
+  //   fetchGallery()
+  // }, [])
+ 
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) =>
+      prev === testimonials.length - 1 ? 0 : prev + 1
+    );
+  };
+
   return (
     <>
       {/* Learn */}
@@ -21,7 +89,7 @@ const Home = () => {
             security, so you can store your data here safely but not be afraid
             of being stolen by others.
           </p>
-          <a href="#" className={`${styles.button} ${styles.buttonLearn}`}>
+          <a href="#" className={`button ${styles.buttonLearn}`}>
             Learn more
           </a>
         </div>
@@ -73,51 +141,60 @@ const Home = () => {
 
       {/* Testimonials */}
       <div className={styles.mainTestimonials}>
-        <div className={styles.testimonialsContainer}>
-          <div className={styles.testimonialsGroup}>
-            <h2 className={styles.testimonialsTitle}>Testimonials</h2>
-            <div className={styles.testimonialsSlide}>
-              <div className={`${styles.arrow} ${styles.arrowLeft}`}>
-                <i className="fa-solid fa-arrow-left" />
-              </div>
-              <div className={styles.testimonialCard}>
-                <div className={styles.testimonialContent}>
-                  <img
-                    className={styles.testimonialAvatar}
-                    src="https://i.pravatar.cc/100"
-                    alt="avatar"
-                  />
-                  <div className={styles.testimonialInfo}>
-                    <h3 className={styles.testimonialName}>John Fang</h3>
-                    <a className={styles.testimonialSite} href="#">
-                      wordfaang.com
-                    </a>
-                    <p className={styles.testimonialText}>
-                      Suspendisse ultrices at diam lectus nullam.
-                      <br />
-                      Nisl, sagittis viverra enim erat tortor ultricies massa
-                      turpis.
-                      <br />
-                      Arcu pulvinar aenean nam laoreet nulla.
-                    </p>
-                  </div>
+      <div className={styles.testimonialsContainer}>
+        <div className={styles.testimonialsGroup}>
+          <h2 className={styles.testimonialsTitle}>Testimonials</h2>
+          <div className={styles.testimonialsSlide}>
+            <div className={`${styles.arrow} ${styles.arrowLeft}`} onClick={handlePrev}>
+              <i className="fa-solid fa-arrow-left" />
+            </div>
+
+            {/* Hiển thị testimonial hiện tại */}
+            <div className={styles.testimonialCard}>
+              <div className={styles.testimonialContent}>
+                <img
+                  className={styles.testimonialAvatar}
+                  src={testimonials[currentIndex].avatar}
+                  alt="avatar"
+                />
+                <div className={styles.testimonialInfo}>
+                  <h3 className={styles.testimonialName}>
+                    {testimonials[currentIndex].name}
+                  </h3>
+                  <a
+                    className={styles.testimonialSite}
+                    href="#"
+                  >
+                    {testimonials[currentIndex].site}
+                  </a>
+                  <p className={styles.testimonialText}>
+                    {testimonials[currentIndex].text}
+                  </p>
                 </div>
               </div>
-              <div className={`${styles.arrow} ${styles.arrowRight}`}>
-                <i className="fa-solid fa-arrow-right" />
-              </div>
             </div>
-            <div className={styles.testimonialDots}>
-              <span className={`${styles.dot} ${styles.active}`} />
-              <span className={styles.dot} />
-              <span className={styles.dot} />
-              <span className={styles.dot} />
+
+            <div className={`${styles.arrow} ${styles.arrowRight}`} onClick={handleNext}>
+              <i className="fa-solid fa-arrow-right" />
             </div>
+          </div>
+
+          {/* Dots */}
+          <div className={styles.testimonialDots}>
+            {testimonials.map((_, idx) => (
+              <span
+                key={idx}
+                className={`${styles.dot} ${idx === currentIndex ? styles.active : ""}`}
+                onClick={() => setCurrentIndex(idx)}
+              />
+            ))}
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 };
+
 
 export default Home;
